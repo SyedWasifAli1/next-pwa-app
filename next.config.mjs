@@ -5,6 +5,7 @@ const nextConfig = {
   /* config options here */
    swcMinify: true,
   reactStrictMode: true,
+  turbopack: false,
 };
 
 const pwaConfig = withPWA({
