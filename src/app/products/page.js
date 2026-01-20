@@ -1,5 +1,8 @@
 "use client";
 
+export const dynamic = "force-static";
+
+
 import { useEffect, useState } from "react";
 import { useIndexedDB } from "../utils/useIndexedDB";
 
