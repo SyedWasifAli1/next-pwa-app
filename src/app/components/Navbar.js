@@ -9,12 +9,13 @@ export default function Navbar() {
       <h1 className="font-bold text-lg">POS SYSTEM</h1>
 
       <nav className="flex gap-6 text-sm">
-        <Link href="/">Dashboard</Link>
-        <Link href="/pos">POS</Link>
-        <Link href="/products">Products</Link>
-        <Link href="/categories">Categories</Link>
-        <Link href="/invoices">Invoices</Link>
-        <Link href="/settings">Settings</Link>
+        <Link href="/" prefetch={false}>Dashboard</Link>
+        <Link href="/pos" prefetch={false}>POS</Link>
+        <Link href="/products" prefetch={false}>Products</Link>
+        <Link href="/categories" prefetch={false}>Categories</Link>
+        <Link href="/invoices" prefetch={false}>Invoices</Link>
+        <Link href="/settings" prefetch={false}>Settings</Link>
+        <Link href="/youtube" prefetch={false}>YouTube</Link>
       </nav>
 
       <ThemeToggle />

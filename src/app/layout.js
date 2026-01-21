@@ -1,3 +1,5 @@
+// export const dynamic = "force-static";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
@@ -27,15 +29,12 @@ export default function RootLayout({ children }) {
 
         <OnlineIndicator />
 
-        {/* Desktop Navbar */}
         <Navbar />
 
-        {/* Page Content */}
         <main className="min-h-screen px-2 md:px-6 pb-24">
           {children}
         </main>
 
-        {/* Mobile Bottom Navigation */}
         <BottomNav />
 
       </body>

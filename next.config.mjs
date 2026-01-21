@@ -1,23 +1,52 @@
-import withPWA from 'next-pwa';
+// import withPWA from 'next-pwa';
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   /* config options here */
+//    swcMinify: true,
+//   reactStrictMode: true,
+//   turbopack: false,
+// };
+
+// const pwaConfig = withPWA({
+//    dest: 'public',       // service worker output
+//     register: true,       // auto-register service worker
+//     skipWaiting: true,    // immediately activate new SW
+//   // disable: process.env.NODE_ENV === 'development',
+// });
+
+// export default pwaConfig(nextConfig);
+
+
+import withPWA from "next-pwa";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-   swcMinify: true,
   reactStrictMode: true,
-  turbopack: false,
+  swcMinify: true,
+
+  // ✅ Next.js 16 default Turbopack ON hota hai
+  // next-pwa webpack use karta hai, isliye Turbopack OFF
+  experimental: {
+    turbo: false,
+  },
 };
 
 const pwaConfig = withPWA({
-   dest: 'public',       // service worker output
-    register: true,       // auto-register service worker
-    skipWaiting: true,    // immediately activate new SW
-  // disable: process.env.NODE_ENV === 'development',
+  dest: "public",
+
+  register: true,
+  skipWaiting: true,
+
+  // ❌ development mai disable MAT karo
+  // warna offline testing kaam nahi karegi
+  disable: false,
+
+  // ✅ Important for App Router
+  buildExcludes: [/middleware-manifest\.json$/],
 });
 
 export default pwaConfig(nextConfig);
-
-
 
 
 
